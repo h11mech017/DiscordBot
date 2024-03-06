@@ -21,7 +21,7 @@ async def on_ready():
 
 async def main():
     async with bot:
-        subprocess.run(os.getenv('COMMAND'), shell=True, check=True)
+        # subprocess.run(os.getenv('COMMAND'), shell=True, check=True)
         await bot.load_extension("MusicPlayer")
         await bot.load_extension("Emojify")
         await bot.load_extension("Help")
