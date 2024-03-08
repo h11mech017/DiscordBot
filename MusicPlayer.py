@@ -116,10 +116,10 @@ class MusicCog(commands.Cog):
     async def queue(self, interaction: discord.Interaction):
         vc: wavelink.Player = interaction.guild.voice_client
         channel = vc.guild.get_channel(self.channel_id)
-        if vc.queue:
+        if not vc.queue.is_empty:
             queue_counter = 1
             queue = []
-            await interaction.response.send_message("目前隊列中的歌有: \n")
+            await interaction.response.send_message(f"目前隊列中的歌有{vc.queue.count}首: \n")
             for item in vc.queue:
                 queue.append(f"{queue_counter}. {item}")
                 queue_counter += 1
