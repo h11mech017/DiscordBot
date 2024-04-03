@@ -41,7 +41,7 @@ class MusicCog(commands.Cog):
     async def on_wavelink_track_end(self, payload: wavelink.TrackEndEventPayload):
         if not payload.player.queue:
             channel = payload.player.guild.get_channel(self.channel_id)
-            await channel.send("已播放所有歌曲: 我嘅任務已經完成了")
+            await channel.send("已播放所有歌曲: 我嘅任務已經完成了", delete_after=40)
             await payload.player.disconnect()
         else:
             await payload.player.play(payload.player.queue.get())
@@ -74,7 +74,7 @@ class MusicCog(commands.Cog):
             else:
                 track: wavelink.Playable = tracks[0]
                 await vc.queue.put_wait(track)
-                await interaction.response.send_message(f"{track} 已加入隊列.")
+                await interaction.response.send_message(f"{track} 已加入隊列.", delete_after=40)
                 
             if not vc.playing:
                 self.channel_id = interaction.channel_id
