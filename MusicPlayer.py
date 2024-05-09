@@ -31,7 +31,7 @@ class MusicCog(commands.Cog):
         try:
             channel = payload.player.guild.get_channel(self.channel_id)
             if channel:
-                await channel.send(f"現正播放: {payload.player.current}", delete_after=40)
+                await channel.send(f"現正播放: {payload.player.current}", delete_after=200)
             else:
                 print(f"Channel with ID: {self.channel_id} not found.")
         except Exception as e:
