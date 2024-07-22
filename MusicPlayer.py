@@ -49,6 +49,7 @@ class MusicCog(commands.Cog):
     @app_commands.command(name="join", description="加入用戶所在頻道.")
     async def join(self, interaction: discord.Interaction):
         await interaction.user.voice.channel.connect()
+        print(f"user {interaction.user.id} requesting, joining channel {interaction.user.voice.channel.id}.")
         await interaction.response.send_message("我要進來嘍𓁹‿𓁹")
 
     @app_commands.command(name="disconnect", description="離開用戶所在頻道.")
@@ -65,6 +66,7 @@ class MusicCog(commands.Cog):
 
             if not interaction.guild.voice_client:
                 vc = await destination.connect(cls=wavelink.Player)
+                print(f"user {interaction.user.id} requesting, joining channel {destination.id}.")
             else:
                 vc = interaction.guild.voice_client
 
