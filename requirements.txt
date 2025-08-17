@@ -1,6 +1,16 @@
+# Core Dependencies
 discord.py==2.2.2
-Pillow==10.1.0
-Pillow==10.3.0
 python-dotenv==1.0.1
-Requests==2.31.0
+
+# Music & Audio
 wavelink==3.2.0
+
+# HTTP & API
+requests==2.31.0
+
+# Image Processing
+Pillow==10.3.0
+
+# Development & Testing
+pytest==7.4.0
+pytest-asyncio==0.21.1
