@@ -14,7 +14,7 @@ plugins:
     clients: ["MUSIC", "ANDROID", "WEB"]
 lavalink:
   plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.13.4"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.14.0"
       snapshot: false # Set to true if you want to use a snapshot version
   server:
     password: "youshallnotpass"
